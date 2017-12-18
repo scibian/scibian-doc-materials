@@ -1,3 +1,9 @@
+scibian-doc-materials (2.11) scibian8; urgency=medium
+
+  * Update example Makefile to grab common template
+
+ -- Rémi Palancher <remi-externe.palancher@edf.fr>  Mon, 18 Dec 2017 11:00:46 +0100
+
 scibian-doc-materials (2.10) scibian8; urgency=low
 
   * Initial release
