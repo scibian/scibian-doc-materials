@@ -1,0 +1,4 @@
+asciidoctor/templates/scibian/guide   usr/share/asciidoctor/scibian
+asciidoctor/templates/common          usr/share/asciidoctor/scibian
+asciidoctor/utils/scibian/templates/* usr/lib/asciidoctor/scibian/templates
+asciidoctor/utils/scibian/scripts/*   usr/lib/asciidoctor/scibian/exec

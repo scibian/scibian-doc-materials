@@ -1,0 +1,34 @@
+Source: scibian-doc-materials
+Section: misc
+Priority: optional
+Maintainer: Scibian Project <packaging@scibian.org>
+Build-Depends:
+ debhelper (>= 8),
+ inkscape
+Standards-Version: 3.9.6
+Homepage: https://github.com/scibian/scibian-doc-materials
+Vcs-Git: https://github.com/scibian/scibian-doc-materials.git
+Vcs-Browser: https://github.com/scibian/scibian-doc-materials
+
+Package: asciidoctor-scibian-tpl-latex
+Architecture: all
+Depends:
+ ${misc:Depends},
+ asciidoctor (>= 0.1.4),
+ rubber,
+ ruby,
+ ruby-tilt,
+ scibian-logos,
+ texlive-fonts-recommended,
+ texlive-latex-extra
+Breaks: asciidoctor-edf-tpl-latex (<< 2.10)
+Replaces: asciidoctor-edf-tpl-latex (<< 2.10)
+Description: Asciidoctor Latex template for Scibian
+ This package provide the Asciidoctor Latex template to generate PDF documents
+ for the Scibian Project.
+
+Package: scibian-logos
+Architecture: all
+Depends: ${misc:Depends}
+Description: Scibian logos in various file formats
+ This package provide the Scibian logos in various file formats.

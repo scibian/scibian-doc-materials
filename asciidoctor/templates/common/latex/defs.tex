@@ -1,0 +1,91 @@
+%
+% set of packages and definitions commons to all documents
+%
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern} % font
+\usepackage{graphicx} % pictures
+\usepackage{float}
+\usepackage{longtable} % for long tables
+\usepackage{array}
+\newcolumntype{M}[1]{>{\raggedright}m{#1}}
+\usepackage{multirow} % col/row span in tables
+\usepackage{listings} % source code with syntax high lighting
+\usepackage{listingsutf8} % utf8 support in listings
+\usepackage{color} % to define own set of colours
+\usepackage{textcomp} % More symbols
+
+\usepackage{url} % url proper formatting
+\usepackage{lastpage} % count total number of pages
+\usepackage{lmodern} % font package
+\renewcommand{\rmdefault}{lmss} % change font familly to sans-serif
+%\renewcommand{\rmdefault}{cmbr}
+
+\usepackage{parskip} % to avoid parskip tuned in toc
+\parindent=0mm % remove indent on the 1st line of paragraphs
+\parskip=2mm % add vertical spacing between paragraphs
+
+\usepackage{enumitem} % remove spacing between items in lists
+\setlist{itemsep=-2pt,leftmargin=15pt,topsep=2pt} % control spacing in lists
+
+% define handful set of colors
+\definecolor{grey}{rgb}{0.4,0.4,0.4}
+\definecolor{trust}{rgb}{0.71,0.14,0.07}
+\definecolor{edf-blue}{rgb}{0.0,0.36,0.73}
+\definecolor{myblue}{rgb}{0.60,0.68,0.76}
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{myyellow}{rgb}{0.87,0.76,0.07}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+\definecolor{colorboxbg}{rgb}{0.95,0.95,0.95}
+\definecolor{colorboxbd}{rgb}{0.8,0.8,0.8}
+
+\usepackage[pdftex, colorlinks=true, linkcolor=grey, citecolor=grey, urlcolor=blue]{hyperref}
+\usepackage{pdfpages} % to include external pdf files
+\usepackage[titles]{tocloft} % for spaces in tableofcontents
+\usepackage{chngpage} % for titlepage
+
+\graphicspath{ {/usr/share/} }
+
+% configuration of tableofcontents
+\setlength{\cftbeforesecskip}{0.5ex}                  % reduce spaces between section lines
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}} % add dots even for section lines
+\lstset{
+  inputencoding=utf8/latin1,
+  basicstyle=\small\ttfamily,
+  columns=fullflexible,
+  keepspaces=true,
+  backgroundcolor=\color{white},  % choose the background color
+  breaklines=true,                % automatic line breaking only at whitespace
+  captionpos=b,                   % sets the caption-position to bottom
+  commentstyle=\color{blue},      % comment style
+  escapeinside={\%*}{*)},         % if you want to add LaTeX within your code
+  keywordstyle=\color{myyellow},    % keyword style
+  stringstyle=\color{mymauve},    % string literal style
+  showstringspaces=false,         % do not underscore spaces in string
+  mathescape=false,               % Don't treat $ as special characters
+}
+
+\lstdefinelanguage{puppet}{
+  sensitive=true,
+  keywords=[1]{class, inherits},
+  keywords=[2]{if, else, file, package, service, exec, notice},
+  keywordstyle=[1]\color{myyellow},
+  keywordstyle=[2]\color{mygreen},
+  commentstyle=\color{myblue},
+  comment=[l]{\#},
+  morestring=[b]",
+  morestring=[b]',
+}
+
+\lstdefinelanguage{yaml}{
+  sensitive=true,
+  commentstyle=\color{myblue},
+  comment=[l]{\#},
+  morestring=[b]",
+  morestring=[b]',
+}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}

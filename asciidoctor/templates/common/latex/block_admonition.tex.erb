@@ -1,0 +1,14 @@
+<%#encoding:UTF-8%>
+
+\fcolorbox{colorboxbd}{colorboxbg}{
+\begin{minipage}{0.9\linewidth}
+{\large \textbf{<%= @caption %>}}
+
+<%
+if title? %>
+<%= title %><%
+end %>
+
+<%= manify content %>
+
+\end{minipage}}

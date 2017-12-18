@@ -1,0 +1,85 @@
+#!/usr/bin/env ruby
+
+require 'erb'
+require 'yaml'
+
+METADATA_YML='metadata.yaml'
+DOC_FILE='base.asc'
+DOC_TPL='/usr/lib/asciidoctor/scibian/templates/guide.erb'
+
+class DocumentVersion
+
+  attr_accessor :tag
+  attr_accessor :date
+  attr_accessor :status
+  attr_accessor :changes
+
+  def initialize(tag, date, status)
+    @tag = tag
+    @date = date
+    @status = status
+    @changes = Array.new
+  end
+
+  def add_change(change)
+    @changes << change
+  end
+
+end
+
+class DocumentMetadata
+
+  def initialize()
+    @cluster = nil
+    @vcs = nil
+    @versions = Array.new
+    @lastversion = nil
+  end
+
+  def parse()
+    metadata = YAML.load_file(METADATA_YML)
+    @title = metadata['title']
+    @name = metadata['name']
+    @vcs = metadata['vcs']
+
+    metadata['versions'].each do |version|
+      xversion = DocumentVersion.new(
+        version['tag'],
+        version['date'],
+        version['status'])
+      @lastversion = xversion if @lastversion.nil? or xversion.tag > @lastversion.tag
+      version['changes'].each do |change|
+        xversion.add_change(change)
+      end
+      @versions << xversion
+    end
+
+  end
+
+  def doc_name()
+    return "#{@name}-#{@lastversion.tag}"
+  end
+
+  def render_doc()
+    puts("#{$PROGRAM_NAME}: generating file #{DOC_FILE}")
+    template = File.new(DOC_TPL).read
+    renderer = ERB.new(template)
+    output = renderer.result(binding)
+    file = File.open(DOC_FILE, 'w')
+    file.write(output)
+    file.close
+  end
+
+end
+
+metadata = DocumentMetadata.new
+metadata.parse()
+
+case ARGV[0]
+when '--doc-name'
+  puts(metadata.doc_name())
+when '--render-base'
+  metadata.render_doc()
+else
+  abort("#{$PROGRAM_NAME}: unknown paramater #{ARGV[0]}")
+end
