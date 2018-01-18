@@ -1,5 +1,5 @@
 Source: scibian-doc-materials
-Section: misc
+Section: scibian
 Priority: optional
 Maintainer: Scibian Project <packaging@scibian.org>
 Build-Depends:
