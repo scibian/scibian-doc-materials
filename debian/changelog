@@ -1,3 +1,9 @@
+scibian-doc-materials (2.12sci8) scibian8; urgency=medium
+
+  * Fix section of packages
+
+ -- Rémi Palancher <remi-externe.palancher@edf.fr>  Thu, 18 Jan 2018 11:09:20 +0100
+
 scibian-doc-materials (2.11) scibian8; urgency=medium
 
   * Update example Makefile to grab common template
