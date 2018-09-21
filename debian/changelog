@@ -1,3 +1,9 @@
+scibian-doc-materials (3.0sci9) scibian9; urgency=medium
+
+  * New major version for scibian9
+
+ -- Rémi Palancher <remi-externe.palancher@edf.fr>  Mon, 8 Oct 2018 17:45:12 +0200
+
 scibian-doc-materials (2.12sci8) scibian8; urgency=medium
 
   * Fix section of packages
