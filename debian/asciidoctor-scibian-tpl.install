@@ -1,4 +1,6 @@
 asciidoctor/latex/guide/*  usr/share/asciidoctor/scibian/guide/latex
 asciidoctor/latex/common/* usr/share/asciidoctor/scibian/common/latex
+asciidoctor/themes         usr/share/asciidoctor/scibian
 asciidoctor/templates      usr/lib/asciidoctor/scibian
 asciidoctor/scripts/*      usr/lib/asciidoctor/scibian/exec
+asciidoctor/build          usr/lib/asciidoctor/scibian

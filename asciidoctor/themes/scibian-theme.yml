@@ -1,0 +1,61 @@
+title_page:
+  logo_image: image:/usr/share/logos/scibian/png/scibian.png[width=250,align=center]
+page:
+  layout: portrait
+  size: A4
+  margin: [30mm, 30mm, 30mm, 30mm]
+  margin_inner: 35mm
+  margin_outer: 15mm
+base:
+  align: justify
+  font:
+    color: #333333
+    family: Helvetica
+    size: 10
+  line:
+    height_length: 13
+    height: $base_line_height_length / $base_font_size
+vertical_spacing: $base_line_height_length
+heading:
+  font:
+    color: #262626
+    size: 17
+    style: bold
+  line_height: 1.2
+  margin_bottom: $vertical_spacing
+link:
+  font_color: #002FA7
+outline_list:
+  indent: $base_font_size * 1.5
+header:
+  height: 30mm
+  line_height: 1
+  recto:
+    left:
+      content: image:/usr/share/logos/scibian/svg/scibian.svg[width=20]
+    center:
+      content: '(C) Scibian Projet -- v{revnumber}, {docdate}'
+  verso:
+    center:
+      content: $header_recto_center_content
+    right:
+      content: image:/usr/share/logos/scibian/svg/scibian.svg[width=20]
+  border:
+    style: solid
+    width: 1
+footer:
+  height: 30mm
+  line_height: 1
+  recto:
+    right:
+      content: '{section-or-chapter-title} | *{page-number}*'
+  verso:
+    left:
+      content: '*{page-number}* | {section-or-chapter-title}'
+  border:
+    style: solid
+    width: 1
+code:
+  font_size: 8
+  background_color: #f5f5f5
+  border_radius: 4

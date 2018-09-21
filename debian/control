@@ -14,10 +14,8 @@ Package: asciidoctor-scibian-tpl
 Architecture: all
 Depends:
  ${misc:Depends},
- asciidoctor (>= 0.1.4),
- rubber,
- ruby,
- ruby-tilt,
+ asciidoctor-pdf,
+ ruby-pygments.rb,
  scibian-logos,
  texlive-fonts-recommended,
  texlive-latex-extra,
