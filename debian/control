@@ -3,14 +3,14 @@ Section: scibian
 Priority: optional
 Maintainer: Scibian Project <packaging@scibian.org>
 Build-Depends:
- debhelper (>= 8),
+ debhelper (>= 9),
  inkscape
 Standards-Version: 3.9.6
 Homepage: https://github.com/scibian/scibian-doc-materials
 Vcs-Git: https://github.com/scibian/scibian-doc-materials.git
 Vcs-Browser: https://github.com/scibian/scibian-doc-materials
 
-Package: asciidoctor-scibian-tpl-latex
+Package: asciidoctor-scibian-tpl
 Architecture: all
 Depends:
  ${misc:Depends},
@@ -20,10 +20,14 @@ Depends:
  ruby-tilt,
  scibian-logos,
  texlive-fonts-recommended,
- texlive-latex-extra
-Breaks: asciidoctor-edf-tpl-latex (<< 2.10)
-Replaces: asciidoctor-edf-tpl-latex (<< 2.10)
-Description: Asciidoctor Latex template for Scibian
+ texlive-latex-extra,
+Breaks:
+ asciidoctor-edf-tpl-latex (<< 2.10),
+ asciidoctor-scibian-tpl-latex,
+Replaces:
+ asciidoctor-edf-tpl-latex (<< 2.10),
+ asciidoctor-scibian-tpl-latex,
+Description: Asciidoctor template for Scibian
  This package provide the Asciidoctor Latex template to generate PDF documents
  for the Scibian Project.
 
