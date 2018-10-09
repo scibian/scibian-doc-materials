@@ -1,4 +1,4 @@
-SRC                       := main.asc $(shell find src -name '*.asc')
+SRC                       ?= main.asc $(shell find src -name '*.asc')
 NAME                      := $(shell $(GENERATOR) --doc-name)
 
 IMG_DIR                   ?= img
