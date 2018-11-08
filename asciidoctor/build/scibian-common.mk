@@ -41,8 +41,8 @@ ifeq ($(PDF_LEGACY),yes)
 else
 	# create tmp build dir
 	$(eval TMP_BUILD_D := $(shell mktemp -d))	
-	# copy document sources in tmp build dir
-	cp -r * $(TMP_BUILD_D)
+	# copy document sources (following symlinks) in tmp build dir
+	cp --recursive --dereference * $(TMP_BUILD_D)
 
 	# replace SVG images with PNG
 	find $(TMP_BUILD_D) -type f -exec sed -i 's/^\(image::.*\)\.svg\(.*\)/\1.png\2/' {} \;
