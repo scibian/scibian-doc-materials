@@ -7,6 +7,7 @@ IMG_SVG                   := $(wildcard $(IMG_DIR)/*.svg)
 IMG_PDF                   := $(patsubst %.svg,%.pdf,$(IMG_SVG))
 IMG_PNG                   := $(patsubst %.svg,%.png,$(IMG_SVG))
 
+ATTRS                     ?=
 PDF_THEME_DIR             ?= /usr/share/asciidoctor/scibian/themes
 PDF_LEGACY_TPL_COMMON_DIR := /usr/share/asciidoctor/scibian/common
 PDF_SOURCE_HIGHLIGHTER    ?= rouge
@@ -23,6 +24,7 @@ $(NAME).html: base.asc $(SRC) $(IMG_PNG)
 	            --attribute data-uri \
 	            --attribute source-highlighter=$(HTML_SOURCE_HIGHLIGHTER) \
 	            --backend html5 \
+	            $(ATTRS) \
 	            $(HTML_OPTS) --out-file $@ base.asc
 
 pdf: $(NAME).pdf
@@ -36,6 +38,7 @@ ifeq ($(PDF_LEGACY),yes)
 	            --template-dir $(PDF_LEGACY_TPL_COMMON_DIR) \
 	            --template-dir $(PDF_LEGACY_TPL_DOC_DIR) \
 	            --backend latex \
+	            $(ATTRS) \
 	            --out-file $(@:.pdf=.tex) base.asc
 	rubber --pdf $(@:.pdf=.tex)
 else
@@ -55,6 +58,7 @@ else
 	            --attribute pdf-stylesdir=$(PDF_THEME_DIR) \
 	            --attribute pdf-style=$(PDF_STYLE) \
 	            --attribute source-highlighter=$(PDF_SOURCE_HIGHLIGHTER) \
+	            $(ATTRS) \
 	            $(PDF_OPTS) $(TMP_BUILD_D)/base.asc
 
 	# delete tmp build dir
