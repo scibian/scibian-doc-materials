@@ -1,5 +1,5 @@
 GENERATOR               := /usr/lib/asciidoctor/scibian/exec/gen-base-guide
-DOCTYPE                 := book
+DOCTYPE                 ?= book
 PDF_STYLE               := scibian
 PDF_LEGACY_TPL_DOC_DIR  := /usr/share/asciidoctor/scibian/guide
 
