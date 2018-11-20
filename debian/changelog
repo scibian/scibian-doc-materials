@@ -1,3 +1,9 @@
+scibian-doc-materials (3.2sci9) scibian9; urgency=medium
+
+  * De-reference symlinks in recursive copy for PDF
+
+ -- Rémi Palancher <remi-externe.palancher@edf.fr>  Tue, 20 Nov 2018 09:08:20 +0100
+
 scibian-doc-materials (3.1sci9) scibian9; urgency=medium
 
   * Make possible to override SRC in sub-makefiles
