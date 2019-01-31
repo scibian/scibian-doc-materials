@@ -1,3 +1,9 @@
+scibian-doc-materials (3.3sci9) scibian9; urgency=medium
+
+  * Add ability to override base.asc deps
+
+ -- Rémi Palancher <remi-externe.palancher@edf.fr>  Thu, 31 Jan 2019 20:31:19 +0100
+
 scibian-doc-materials (3.2sci9) scibian9; urgency=medium
 
   * De-reference symlinks in recursive copy for PDF
