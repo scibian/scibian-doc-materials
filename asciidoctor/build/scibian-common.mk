@@ -1,4 +1,5 @@
 SRC                       ?= main.asc $(shell find src -name '*.asc')
+BASE_DEPS                 ?=
 NAME                      := $(shell $(GENERATOR) --doc-name)
 
 IMG_DIR                   ?= img
@@ -29,7 +30,7 @@ $(NAME).html: base.asc $(SRC) $(IMG_PNG)
 
 pdf: $(NAME).pdf
 
-base.asc: metadata.yaml
+base.asc: metadata.yaml $(BASE_DEPS)
 	$(GENERATOR) --render-base
 
 $(NAME).pdf: base.asc $(SRC) $(IMG_PDF)
