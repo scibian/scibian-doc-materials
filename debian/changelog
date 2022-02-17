@@ -1,3 +1,9 @@
+scibian-doc-materials (3.3sci10) scibian10; urgency=medium
+
+  * Add support for Buster
+
+ -- Mathieu Chouquet-Stringer <mathieu-externe.chouquet-stringer@edf.fr>  Thu, 17 Feb 2022 11:17:30 +0100
+
 scibian-doc-materials (3.3sci9) scibian9; urgency=medium
 
   * Add ability to override base.asc deps
