@@ -5,7 +5,7 @@ Maintainer: Scibian Project <packaging@scibian.org>
 Build-Depends:
  debhelper (>= 10),
  inkscape
-Standards-Version: 3.9.6
+Standards-Version: 4.6.2
 Homepage: https://github.com/scibian/scibian-doc-materials
 Vcs-Git: https://github.com/scibian/scibian-doc-materials.git
 Vcs-Browser: https://github.com/scibian/scibian-doc-materials
