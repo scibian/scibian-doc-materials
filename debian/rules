@@ -8,6 +8,6 @@ PNG_DPI=200
 override_dh_auto_build:
 	# generate logos in PNG and PDF formats
 	for LOGO in scibian; do \
-		inkscape --export-pdf=logo/$${LOGO}.pdf -D logo/$${LOGO}.svg; \
+		inkscape --export-filename=logo/$${LOGO}.pdf -D logo/$${LOGO}.svg; \
 		inkscape --export-dpi=${PNG_DPI} --export-png=logo/$${LOGO}.png -D logo/$${LOGO}.svg; \
 	done
